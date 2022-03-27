@@ -10,7 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BabyMafia">
         <activity
-            android:name=".Activity_choose_ofline_online"
+            android:name=".ActivityJoinGame"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityCreateGame"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityOnlineGame"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityOfflineGame"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityHelp"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityHowToPlay"
+            android:exported="false" />
+        <activity
+            android:name=".ActivitySettings"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityCreateGameOrJoinGame"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityChooseOfflineOnline"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

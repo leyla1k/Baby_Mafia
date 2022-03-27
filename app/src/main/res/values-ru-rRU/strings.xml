@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Baby Mafia</string>
+    <string name="start_button">Игрвть</string>
+    <string name="settings">Настройки</string>
+    <string name="how_to_play">Как играть</string>
+    <string name="offline">Оффлайн</string>
+    <string name="online">Онлайн</string>
+    <string name="create_game">Создать игру</string>
+    <string name="join_game">Присоединиться к игре</string>
+    <string name="enter_number_of_players">Введите количество игроков (from 6 up to 16)</string>
+    <string name="choose_room_type">Выберите тип комнаты (открытый или закрытый)</string>
+    <string name="private_room_type">Закрытый</string>
+    <string name="public_room_type">Открытый</string>
+    <string name="enter_room_name">Название комнаты</string>
+</resources>

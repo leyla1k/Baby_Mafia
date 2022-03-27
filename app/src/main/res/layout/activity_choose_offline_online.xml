@@ -4,21 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_choose_ofline_online">
+    tools:context=".ActivityChooseOfflineOnline">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/offline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Offline"
+        android:text="@string/offline"
         tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="244dp" />
+        tools:layout_editor_absoluteY="244dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/online"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Online"
+        android:text="@string/online"
         tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="244dp" />
+        tools:layout_editor_absoluteY="244dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

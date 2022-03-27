@@ -3,4 +3,13 @@
     <string name="start_button">Play</string>
     <string name="settings">Settings</string>
     <string name="how_to_play">Help</string>
+    <string name="offline">Offline</string>
+    <string name="online">Online</string>
+    <string name="create_game">Create game</string>
+    <string name="join_game">Join game</string>
+    <string name="enter_number_of_players">Enter number of players (from 6 up to 16)</string>
+    <string name="choose_room_type">Choose room type (public or private)</string>
+    <string name="private_room_type">Private</string>
+    <string name="public_room_type">Open</string>
+    <string name="enter_room_name">Room name</string>
 </resources>
