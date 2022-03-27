@@ -1,5 +1,5 @@
-package first;
+package com.example.babymafia.first;
 
-public class Citizen {
+public class Citizen extends Player {
 
 }

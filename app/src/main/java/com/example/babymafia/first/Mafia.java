@@ -3,14 +3,12 @@ package com.example.babymafia.first;
 public class Mafia extends Player {
 
 
-    public Mafia() {//конструктор?
 
-    }
+    public void kill(Player a) {
+    if (Permission_to_act==true) {
+        a.setLife(false);
+        }
 
-
-
-    public void kill() {
-       // .Life=0;
     }
 
 
