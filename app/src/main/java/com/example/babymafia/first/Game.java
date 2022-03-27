@@ -5,24 +5,174 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class Game {
-    int role=0;
-    int number_of_players=0;
-    int count_of_mafias=0;
-    int count_of_doctor=0;
-    int count_of_sweeties=0;
-    int count_of_citizens=0;
-    int count_of_madmen=0;
-    int count_of_commissioners=0;
-    int time_of_day=1;//1 means day
-    int j=0;
-    Vector <Player> players = new Vector<Player>();
+    int role = 0;
+    int number_of_players = 0;
+    int count_of_mafias = 0;
+    int count_of_doctor = 0;
+    int count_of_sweeties = 0;
+    int count_of_citizens = 0;
+    int count_of_madmen = 0;
+    int count_of_commissioners = 0;
+    int player_with_max_vote;
+    int time_of_day = 1;//1 means day
+    int j = 0;
+    int win=0;
+
+    Vector<Player> players = new Vector<Player>();
 
     public void Number_of_players() {
         Scanner in = new Scanner(System.in);
         number_of_players = in.nextInt();
     }
-    public void Night(){
-        time_of_day==2
+
+    public int find_max_vote() {
+        int max_votes = -100;
+        for (int j = 0; j < count_of_mafias; j++) {
+            if (players.get(j).getVotes() > max_votes) {
+                max_votes = players.get(j).getVotes();
+                player_with_max_vote = j;
+            }
+        }
+        return player_with_max_vote;
+    }
+
+    public void Night() {
+        time_of_day = 2;
+
+        for (int i = 0; i < number_of_players; i++) {
+            if (players.get(i).getRole() == 1) {//проститутка, мафия, маньяк, лекарь, комиссар
+                players.get(i).setPermission_to_act(true);
+                //push button with time
+                visit();
+                players.get(i).setPermission_to_act(false);
+                break;
+            }
+        }
+
+        for (int i = 0; i < number_of_players; i++) {
+            if (players.get(i).getRole() == 2) {//проститутка, мафия, маньяк, лекарь, комиссар
+                players.get(i).setPermission_to_act(true);
+                put_to_a_vote();//на когото тыкнуть справа маленький кружечек votes
+            }
+            players.get(i).setPermission_to_act(false);
+        }
+
+
+        players.get(find_max_vote()).setLife(1);
+//обнулить голоса
+
+        for (int i = 0; i < number_of_players; i++) {
+            if (players.get(i).getRole() == 3) {//проститутка, мафия, маньяк, лекарь, комиссар
+                players.get(i).setPermission_to_act(true);
+                //push button with time
+                kill();
+                players.get(i).setPermission_to_act(false);
+                break;
+            }
+        }
+
+
+        for (int i = 0; i < number_of_players; i++) {
+            if (players.get(i).getRole() == 4) {//проститутка, мафия, маньяк, лекарь, комиссар
+                players.get(i).setPermission_to_act(true);
+                //push button with time
+                cure();
+                players.get(i).setPermission_to_act(false);
+                break;
+            }
+        }
+
+        for (int i = 0; i < number_of_players; i++) {
+            if (players.get(i).getRole() == 5) {//проститутка, мафия, маньяк, лекарь, комиссар
+                players.get(i).setPermission_to_act(true);
+                //push button with time
+                check();
+
+                players.get(i).setPermission_to_act(false);
+                break;
+            }
+        }
+
+
+    }
+
+    public void Day() {
+        time_of_day = 1;
+        for (int i = 0; i < number_of_players; i++) {
+            if (players.get(i).getLife() == 1) {
+                //превращение в класс плеер
+                number_of_players--;
+                players.get(i).setLife(0);
+            }
+            switch (players.get(i).getRole()) {
+                case 1:
+                    count_of_sweeties--;
+                    break;
+
+                case 2:
+                    count_of_mafias--;
+                    break;
+                case 3: {
+                    count_of_madmen--;
+                    break;
+                }
+                case 4: {
+                    count_of_doctor--;
+                    break;
+                }
+                case 5: {
+                    count_of_commissioners--;
+                    break;
+                }
+                case 6: {
+                    count_of_citizens--;
+                    break;
+                }
+                default:
+                    break;///откуда выход?
+            }
+            if (players.get(i).getLife() == 0) {
+                players.get(i).setRole(0);
+            }
+        }
+        for (int i = 0; i < number_of_players; i++) {
+            if (players.get(i).getRole() != 0) {
+                players.get(i).setAbility_to_chat(true);
+                players.get(i).setAbility_to_vote(true);
+            }
+        }
+
+        for (int i = 0; i < number_of_players; i++) {
+            vote();//button
+        }
+
+        players.get(find_max_vote()).setLife(0);
+        //+превращение в класс плэер
+//cмерть прописать
+
+        for (int i = 0; i < number_of_players; i++) {
+            players.get(i).setAbility_to_chat(false);
+            players.get(i).setAbility_to_vote(false);
+        }
+    }
+
+    public void check_who_win() {
+        if ((count_of_mafias + count_of_sweeties) >= (count_of_citizens + count_of_madmen + count_of_commissioners + count_of_doctor)) {
+            for (int i = 0; i < players.size(); i++) {
+                if ((players.get(i).getRole() == 1) || (players.get(i).getRole() == 2)) {
+                    players.get(i).setWinner(1);
+                    win=1;
+                } else {players.get(i).setWinner(2);}
+            }
+        } else if (count_of_mafias == 0) {
+            for (int i = 0; i < players.size(); i++) {
+                if (!((players.get(i).getRole() == 1) || (players.get(i).getRole() == 2))) {
+                    players.get(i).setWinner(1);
+                    win=1;
+                } else players.get(i).setWinner(2);
+            }
+
+        }
     }
 
 
@@ -74,7 +224,7 @@ public class Game {
                     j++;//count mafias++
 // нисходящее преобразование от Player к типу Mafia
                     Mafia mafia = (Mafia) players.get(i);//transforming into mafia
-                    players.get(i).setRole(1);
+                    players.get(i).setRole(2);
                 }
                 if (j == count_of_mafias) {
                     j = 0;
@@ -90,7 +240,7 @@ public class Game {
                 if ((role == 1) && (players.get(i).getRole() == 0)) {
                     j++;
                     Doctor doctor = (Doctor) players.get(i);
-                    players.get(i).setRole(2);
+                    players.get(i).setRole(4);
                 }
                 if (j == count_of_doctor) {
                     j = 0;
@@ -106,7 +256,7 @@ public class Game {
                 if ((role == 1) && (players.get(i).getRole() == 0)) {
                     j++;
                     Sweety sweety = (Sweety) players.get(i);
-                    players.get(i).setRole(3);
+                    players.get(i).setRole(1);
                 }
                 if (j == count_of_sweeties) {
                     j = 0;
@@ -122,7 +272,7 @@ public class Game {
                 if ((role == 1) && (players.get(i).getRole() == 0)) {
                     j++;
                     Commissioner commissioner = (Commissioner) players.get(i);
-                    players.get(i).setRole(4);
+                    players.get(i).setRole(5);
                 }
                 if (j == count_of_commissioners) {
                     j = 0;
@@ -138,7 +288,7 @@ public class Game {
                 if ((role == 1) && (players.get(i).getRole() == 0)) {
                     j++;
                     Madman madman = (Madman) players.get(i);
-                    players.get(i).setRole(5);
+                    players.get(i).setRole(3);
                 }
                 if (j == count_of_madmen) {
                     j = 0;
@@ -154,11 +304,20 @@ public class Game {
             }
         }
 
+        while (win==0){
+            Day();
+            Night();
+            check_who_win();
+        }
 
-
-
+    }
 
 
 
 }
-}
+
+
+
+
+
+
