@@ -8,8 +8,13 @@
     <string name="create_game">Create game</string>
     <string name="join_game">Join game</string>
     <string name="enter_number_of_players">Enter number of players (from 6 up to 16)</string>
-    <string name="choose_room_type">Choose room type (public or private)</string>
-    <string name="private_room_type">Private</string>
-    <string name="public_room_type">Open</string>
-    <string name="enter_room_name">Room name</string>
+    <string name="choose_lobby_type">Choose lobby type (public or private)</string>
+    <string name="private_lobby_type">Private</string>
+    <string name="public_lobby_type">Open</string>
+    <string name="enter_lobby_name">Room name</string>
+    <string name="enter_lobby_name">Enter lobby name</string>
+    <string name="enter_password">Enter password</string>
+    <string name="go_back">Back</string>
+    <string name="min_players">Choose minimum number of players</string>
+    <string name="max_players">Choose maximum number of players</string>
 </resources>
