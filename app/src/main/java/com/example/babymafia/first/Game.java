@@ -22,7 +22,7 @@ public class Game {
         number_of_players = in.nextInt();
     }
     public void Night(){
-        time_of_day==2
+        time_of_day==2;
     }
 
 
