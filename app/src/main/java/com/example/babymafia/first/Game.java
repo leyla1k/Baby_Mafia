@@ -99,11 +99,11 @@ public class Game {
     public void Day() {
         time_of_day = 1;
         for (int i = 0; i < number_of_players; i++) {
-            if (players.get(i).getLife() == 1) {
-                //превращение в класс плеер
-                number_of_players--;
-                players.get(i).setLife(0);
-            }
+  //          if (players.get(i).getLife() == 1) {
+ //               Player player = players.get(i);   // преобразование восходящие плэер плэер неправильно и вообще это не надо делать потому что нам нао показывать иконки и потом присуждать победу
+  //              number_of_players--;/////не забыть
+   //             players.get(i).setLife(0);//не забыть
+     //       }
             switch (players.get(i).getRole()) {
                 case 1:
                     count_of_sweeties--;
@@ -131,12 +131,10 @@ public class Game {
                 default:
                     break;///откуда выход?
             }
-            if (players.get(i).getLife() == 0) {
-                players.get(i).setRole(0);
-            }
+
         }
         for (int i = 0; i < number_of_players; i++) {
-            if (players.get(i).getRole() != 0) {
+            if (players.get(i).getLife() != 0) {
                 players.get(i).setAbility_to_chat(true);
                 players.get(i).setAbility_to_vote(true);
             }
@@ -147,8 +145,10 @@ public class Game {
         }
 
         players.get(find_max_vote()).setLife(0);
-        //+превращение в класс плэер
-//cмерть прописать
+
+        for (int i = 0; i < number_of_players; i++) {
+            players.get(i).setVotes(0);
+        }
 
         for (int i = 0; i < number_of_players; i++) {
             players.get(i).setAbility_to_chat(false);
@@ -205,9 +205,6 @@ public class Game {
             count_of_commissioners = 1;
             count_of_citizens = number_of_players - count_of_madmen - count_of_mafias - count_of_doctor - count_of_sweeties - count_of_commissioners;
         }
-        // как я себе это представляю забивается количество игроков создается ну пусть 9 объектов класса Player
-        //затем вот в таких циклах определяется роль и вызываем деструктор i Player и конструктор мафии/доктора для игрока i
-        //имя можно в стринг перевести
 
 
         for (int i = 0; i < number_of_players; i++) {
