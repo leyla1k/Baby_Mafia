@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity_choose_ofline_online">
+    tools:context=".ActivityCreateGameOrJoinGame">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/create_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Offline"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="244dp" />
+        android:layout_marginStart="232dp"
+        android:text="@string/create_game"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="82dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/join_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Online"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="244dp" />
+        android:text="@string/join_game"
+        tools:layout_editor_absoluteX="519dp"
+        tools:layout_editor_absoluteY="82dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
