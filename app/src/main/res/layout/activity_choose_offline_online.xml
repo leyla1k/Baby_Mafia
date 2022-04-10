@@ -11,16 +11,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/offline"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="244dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="462dp"
+        tools:layout_editor_absoluteY="75dp" />
 
     <Button
         android:id="@+id/online"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/online"
-        tools:layout_editor_absoluteX="77dp"
-        tools:layout_editor_absoluteY="244dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="305dp"
+        tools:layout_editor_absoluteY="75dp" />
+
+    <Button
+        android:id="@+id/go_back_to_main_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go_back"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="325dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

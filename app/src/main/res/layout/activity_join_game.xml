@@ -21,9 +21,9 @@
         android:ems="10"
         android:inputType="numberSigned"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.554"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="48dp" />
+        tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/max_number_of_players_pole"
@@ -31,16 +31,16 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        tools:layout_editor_absoluteX="319dp"
-        tools:layout_editor_absoluteY="150dp" />
+        tools:layout_editor_absoluteX="91dp"
+        tools:layout_editor_absoluteY="138dp" />
 
     <TextView
         android:id="@+id/max_number_of_players_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/max_players"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="116dp" />
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="104dp" />
 
     <Button
         android:id="@+id/go_back_button"

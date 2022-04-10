@@ -14,7 +14,7 @@ public class ActivityCreateGameOrJoinGame extends AppCompatActivity {
         setContentView(R.layout.activity_create_game_or_join_game);
 
         Button create_game_button = (Button) findViewById(R.id.create_game);
-        set_on_click_listener(create_game_button, ActivityCreateGame.class, R.layout.activity_create_game);
+        set_on_click_listener(create_game_button, ActivityCreateGame.class, R.layout.activity_create_online_game);
 
         Button join_game_button = (Button) findViewById(R.id.join_game);
         set_on_click_listener(join_game_button, ActivityJoinGame.class, R.layout.activity_join_game);

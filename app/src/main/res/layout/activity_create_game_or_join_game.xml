@@ -10,16 +10,16 @@
         android:id="@+id/create_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="102dp"
+        android:layout_marginStart="232dp"
         android:text="@string/create_game"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="205dp" />
+        tools:layout_editor_absoluteY="82dp" />
 
     <Button
         android:id="@+id/join_game"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/join_game"
-        tools:layout_editor_absoluteX="482dp"
-        tools:layout_editor_absoluteY="189dp" />
+        tools:layout_editor_absoluteX="519dp"
+        tools:layout_editor_absoluteY="82dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

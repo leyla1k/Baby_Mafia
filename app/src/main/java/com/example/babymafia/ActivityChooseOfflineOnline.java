@@ -17,7 +17,10 @@ public class ActivityChooseOfflineOnline extends AppCompatActivity {
         set_on_click_listener(offline_game_button, ActivityOfflineGame.class, R.layout.activity_offline_game);
 
         Button online_game_button = (Button) findViewById(R.id.online);
-        set_on_click_listener(offline_game_button, ActivityOnlineGame.class, R.layout.activity_offline_game);
+        set_on_click_listener(online_game_button, ActivityOnlineGame.class, R.layout.activity_create_game_or_join_game);
+
+        Button go_back_to_main_button = (Button) findViewById((R.id.go_back_to_main_button));
+        set_on_click_listener(go_back_to_main_button, MainActivity.class, R.layout.activity_main);
     }
 
     void set_on_click_listener(Button button, Class activity, int act) {
