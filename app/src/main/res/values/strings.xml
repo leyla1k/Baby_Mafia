@@ -12,9 +12,13 @@
     <string name="private_lobby_type">Private</string>
     <string name="public_lobby_type">Open</string>
     <string name="enter_lobby_name">Room name</string>
-    <string name="enter_lobby_name">Enter lobby name</string>
     <string name="enter_password">Enter password</string>
     <string name="go_back">Back</string>
     <string name="min_players">Choose minimum number of players</string>
     <string name="max_players">Choose maximum number of players</string>
+    <string name="vote">Vote</string>
+    <string name="enter_message">Enter message</string>
+    <string name="chat">Chat</string>
+    <string name="help">Help</string>
+
 </resources>
