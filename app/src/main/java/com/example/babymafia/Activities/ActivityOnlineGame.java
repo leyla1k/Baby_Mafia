@@ -1,10 +1,24 @@
-package com.example.babymafia.first;
+package com.example.babymafia.Activities;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.Button;
+
+import com.example.babymafia.R;
+import com.example.babymafia.Players.Citizen;
+import com.example.babymafia.Players.Commissioner;
+import com.example.babymafia.Players.Doctor;
+import com.example.babymafia.Players.Madman;
+import com.example.babymafia.Players.Mafia;
+import com.example.babymafia.Players.Player;
+import com.example.babymafia.Players.Sweety;
 
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class Game {
+public class ActivityOnlineGame extends AppCompatActivity {
     int role = 0;
     int number_of_players = 0;
     int count_of_mafias = 0;
@@ -17,6 +31,13 @@ public class Game {
     int time_of_day = 1;//1 means day
     int j = 0;
     int win=0;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_online_game);
+    }
+
 
     Vector<Player> players = new Vector<Player>();
 
@@ -68,6 +89,8 @@ public class Game {
                 kill();
                 players.get(i).setPermission_to_act(false);
                 break;
+            } else {
+                Button kill_button = (Button) findViewById();
             }
         }
 
@@ -99,11 +122,11 @@ public class Game {
     public void Day() {
         time_of_day = 1;
         for (int i = 0; i < number_of_players; i++) {
-  //          if (players.get(i).getLife() == 1) {
- //               Player player = players.get(i);   // преобразование восходящие плэер плэер неправильно и вообще это не надо делать потому что нам нао показывать иконки и потом присуждать победу
-  //              number_of_players--;/////не забыть
-   //             players.get(i).setLife(0);//не забыть
-     //       }
+            //          if (players.get(i).getLife() == 1) {
+            //               Player player = players.get(i);   // преобразование восходящие плэер плэер неправильно и вообще это не надо делать потому что нам нао показывать иконки и потом присуждать победу
+            //              number_of_players--;/////не забыть
+            //             players.get(i).setLife(0);//не забыть
+            //       }
             switch (players.get(i).getRole()) {
                 case 1:
                     count_of_sweeties--;
@@ -308,13 +331,4 @@ public class Game {
         }
 
     }
-
-
-
 }
-
-
-
-
-
-

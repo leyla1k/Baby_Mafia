@@ -10,34 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BabyMafia">
         <activity
-            android:name=".ActivityJoinGame"
+            android:name=".Activities.ActivityJoinGame"
             android:exported="false" />
         <activity
-            android:name=".ActivityCreateGame"
+            android:name=".Activities.ActivityCreateGame"
             android:exported="false" />
         <activity
-            android:name=".ActivityOnlineGame"
+            android:name=".Activities.ActivityOnlineGame"
             android:exported="false" />
         <activity
-            android:name=".ActivityOfflineGame"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityHelp"
-            android:exported="false" />
-        <activity
-            android:name=".ActivityHowToPlay"
-            android:exported="false" />
-        <activity
-            android:name=".ActivitySettings"
+            android:name=".Activities.ActivityOfflineGame"
             android:exported="false" />
         <activity
             android:name=".ActivityCreateGameOrJoinGame"
             android:exported="false" />
         <activity
-            android:name=".ActivityChooseOfflineOnline"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

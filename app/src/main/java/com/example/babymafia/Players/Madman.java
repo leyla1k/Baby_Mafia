@@ -1,4 +1,4 @@
-package com.example.babymafia.first;
+package com.example.babymafia.Players;
 
 public class Madman extends Player{
 
